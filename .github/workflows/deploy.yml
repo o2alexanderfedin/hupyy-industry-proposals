@@ -1,0 +1,186 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML files exist
+        run: |
+          echo "Checking for HTML files..."
+          if [ -f docs/index.html ]; then
+            echo "✓ index.html found"
+          else
+            echo "✗ index.html not found"
+            exit 1
+          fi
+
+          # Count HTML files
+          html_count=$(find docs -name "*.html" -type f | wc -l)
+          echo "Found $html_count HTML files"
+
+          if [ "$html_count" -eq 0 ]; then
+            echo "✗ No HTML files found in docs/"
+            exit 1
+          fi
+
+          echo "✓ HTML files validated"
+
+      - name: Validate Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v18
+        with:
+          globs: '**/*.md'
+          config: |
+            {
+              "default": true,
+              "MD013": false,
+              "MD033": false,
+              "MD041": false
+            }
+        continue-on-error: true
+
+      - name: Check for broken links in markdown
+        run: |
+          echo "Checking for broken internal links..."
+          # Simple check for common broken link patterns
+          if grep -r "\[.*\](http://localhost" docs/ 2>/dev/null; then
+            echo "⚠️  Warning: Found localhost links that may not work in production"
+          fi
+          echo "✓ Link check completed"
+        continue-on-error: true
+
+      - name: Check file sizes
+        run: |
+          echo "Checking for large files (>5MB)..."
+          large_files=$(find docs -type f -size +5M 2>/dev/null || true)
+          if [ -n "$large_files" ]; then
+            echo "⚠️  Warning: Large files found:"
+            find docs -type f -size +5M -exec ls -lh {} \; || true
+          else
+            echo "✓ No large files found"
+          fi
+
+      - name: Validate directory structure
+        run: |
+          echo "Validating directory structure..."
+          required_dirs=("docs/assets" "docs/reports")
+          for dir in "${required_dirs[@]}"; do
+            if [ -d "$dir" ]; then
+              echo "✓ $dir exists"
+            else
+              echo "⚠️  Warning: $dir not found"
+            fi
+          done
+
+  test:
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Verify critical files
+        run: |
+          echo "Verifying critical files..."
+          critical_files=(
+            "docs/index.html"
+            "docs/README.md"
+            "README.md"
+          )
+
+          all_present=true
+          for file in "${critical_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "✓ $file present"
+            else
+              echo "✗ $file missing"
+              all_present=false
+            fi
+          done
+
+          if [ "$all_present" = false ]; then
+            exit 1
+          fi
+
+          echo "✓ All critical files present"
+
+      - name: Check HTML syntax
+        run: |
+          echo "Performing basic HTML syntax checks..."
+          # Check for common HTML issues
+          for html_file in $(find docs -name "*.html"); do
+            echo "Checking $html_file..."
+
+            # Check for unclosed tags (basic check)
+            if ! grep -q "</html>" "$html_file"; then
+              echo "⚠️  Warning: $html_file may be missing closing </html> tag"
+            fi
+
+            if ! grep -q "</body>" "$html_file"; then
+              echo "⚠️  Warning: $html_file may be missing closing </body> tag"
+            fi
+          done
+          echo "✓ HTML syntax checks completed"
+
+      - name: Verify assets
+        run: |
+          echo "Verifying assets directory..."
+          if [ -d "docs/assets" ]; then
+            asset_count=$(find docs/assets -type f | wc -l)
+            echo "Found $asset_count asset files"
+          else
+            echo "⚠️  Warning: No assets directory found"
+          fi
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [validate, test]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Display deployment URL
+        run: |
+          echo "🚀 Deployment successful!"
+          echo "📄 Site URL: ${{ steps.deployment.outputs.page_url }}"
