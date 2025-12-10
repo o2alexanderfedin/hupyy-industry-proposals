@@ -1,6 +1,14 @@
 # Hupyy Technologies: Industry Proposals
 
+[![Deploy to GitHub Pages](https://github.com/o2alexanderfedin/hupyy-industry-proposals/actions/workflows/deploy.yml/badge.svg)](https://github.com/o2alexanderfedin/hupyy-industry-proposals/actions/workflows/deploy.yml)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://o2alexanderfedin.github.io/hupyy-industry-proposals/)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
+
 **Comprehensive market research and analysis across 10 industry verticals**
+
+**Live Website**: [https://o2alexanderfedin.github.io/hupyy-industry-proposals/](https://o2alexanderfedin.github.io/hupyy-industry-proposals/)
+
+**GitHub Repository**: [https://github.com/o2alexanderfedin/hupyy-industry-proposals](https://github.com/o2alexanderfedin/hupyy-industry-proposals)
 
 ## Overview
 
@@ -71,13 +79,64 @@ python3 -m http.server 8000
 - EAL7 certification pathway (only 15-20 products globally)
 - Patent-able IP in verified RAG and C++ transpiler
 
-## Deployment
+## Development Workflow
 
-The website is ready for GitHub Pages deployment:
+This repository uses **git-flow** branching strategy with automated CI/CD:
 
-1. Push to GitHub
-2. Enable Pages: Settings → Pages → Source: main branch, /docs folder
-3. Website will be live at: `https://<username>.github.io/<repo>/`
+### Branch Structure
+- **main**: Production branch (deployed to GitHub Pages)
+- **develop**: Integration branch for ongoing development
+- **feature/\***: Feature development branches
+- **release/\***: Release preparation branches
+- **hotfix/\***: Emergency fixes to production
+
+### Quick Start with Helper Scripts
+
+```bash
+# Start a new feature
+./scripts/start-feature.sh my-new-feature
+
+# Make your changes and commit
+git add .
+git commit -m "Add new feature"
+
+# Finish the feature (merges to develop)
+./scripts/finish-feature.sh my-new-feature
+
+# Create a release when ready for production
+./scripts/create-release.sh v1.0.0 "Initial release"
+```
+
+### Manual Git Flow Commands
+
+```bash
+# Start a feature
+git flow feature start my-feature
+
+# Finish a feature
+git flow feature finish my-feature
+
+# Start a release
+git flow release start v1.0.0
+
+# Finish a release
+git flow release finish v1.0.0
+git push origin main develop --tags
+```
+
+### CI/CD Pipeline
+
+GitHub Actions automatically:
+1. **Validates** HTML and markdown on all PRs and pushes
+2. **Tests** file structure and critical files
+3. **Deploys** to GitHub Pages when code is pushed to `main`
+
+Monitor deployments: `gh run watch`
+
+### Branch Protection
+
+- **main**: Requires status checks (validate + test) to pass before merge
+- **develop**: Allows force pushes for rebasing, no status checks required
 
 ## Testing
 
