@@ -47,13 +47,6 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v18
         with:
           globs: '**/*.md'
-          config: |
-            {
-              "default": true,
-              "MD013": false,
-              "MD033": false,
-              "MD041": false
-            }
         continue-on-error: true
 
       - name: Check for broken links in markdown
