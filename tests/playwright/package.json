@@ -1,0 +1,29 @@
+{
+  "name": "hupyy-industry-proposals-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright verification tests for Hupyy Industry Proposals GitHub Pages site",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report reports",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "e2e",
+    "github-pages",
+    "verification"
+  ],
+  "author": "Hupyy Technologies",
+  "license": "Proprietary",
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.0.0"
+  }
+}

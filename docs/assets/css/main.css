@@ -67,6 +67,67 @@ a:hover {
   padding: 0 24px;
 }
 
+/* Site Header */
+.site-header {
+  background: white;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  min-height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: white;
+}
+
+.github-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.github-text {
+  white-space: nowrap;
+}
+
 /* Hero Section */
 .hero {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -533,6 +594,24 @@ a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .github-link {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+
+  .github-text {
+    display: none;
+  }
+
+  .github-icon {
+    width: 24px;
+    height: 24px;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
