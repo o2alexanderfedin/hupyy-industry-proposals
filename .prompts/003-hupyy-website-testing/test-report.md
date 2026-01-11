@@ -3,7 +3,7 @@
 **Test Date:** December 10, 2025
 **Test Duration:** ~12 minutes
 **Tester:** Claude Code Automated Testing
-**Website Location:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/docs/`
+**Website Location:** `~/Projects/hapyy/proposals/generic/docs/`
 
 ---
 
@@ -286,10 +286,10 @@ Markdown (10 proposal files):
 ## Test Artifacts
 
 ### Screenshots Generated
-1. `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.playwright-mcp/test-screenshots/index-page.png`
-2. `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.playwright-mcp/test-screenshots/financial-services-report.png`
-3. `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.playwright-mcp/test-screenshots/mobile-375px.png`
-4. `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.playwright-mcp/test-screenshots/tablet-768px.png`
+1. `~/Projects/hapyy/proposals/generic/.playwright-mcp/test-screenshots/index-page.png`
+2. `~/Projects/hapyy/proposals/generic/.playwright-mcp/test-screenshots/financial-services-report.png`
+3. `~/Projects/hapyy/proposals/generic/.playwright-mcp/test-screenshots/mobile-375px.png`
+4. `~/Projects/hapyy/proposals/generic/.playwright-mcp/test-screenshots/tablet-768px.png`
 
 ### Test Server
 - Local HTTP server used: `python3 -m http.server 8080`
@@ -353,4 +353,4 @@ The Hupyy industry proposals website is fully functional and ready for productio
 
 **Report Generated:** December 10, 2025
 **Testing Completed By:** Claude Code Automated Testing Framework
-**Report Location:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/003-hupyy-website-testing/test-report.md`
+**Report Location:** `~/Projects/hapyy/proposals/generic/.prompts/003-hupyy-website-testing/test-report.md`

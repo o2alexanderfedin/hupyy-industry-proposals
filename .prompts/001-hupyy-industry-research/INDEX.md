@@ -10,7 +10,7 @@
 
 ### Energy & Utilities (Oil & Gas, Power Grid, Renewable Energy)
 
-**File**: `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/energy-utilities-proposal.md`
+**File**: `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/energy-utilities-proposal.md`
 
 **Key Metrics**:
 - Word Count: 7,634 (exceeds 3,000-5,000 minimum)
@@ -198,7 +198,7 @@ The reports directory contains additional comprehensive industry analysis docume
 
 ## File Locations
 
-**Report Directory**: `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/`
+**Report Directory**: `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/`
 
 **Main Report**: 
 - `energy-utilities-proposal.md` (7,634 words, 62 KB)

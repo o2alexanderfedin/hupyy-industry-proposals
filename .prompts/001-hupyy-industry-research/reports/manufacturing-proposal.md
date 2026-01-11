@@ -1452,7 +1452,7 @@ Target: 10-15 manufacturing organizations globally
 
     <technology_base>
       <base_document>HUPYY-TECH.md</base_document>
-      <base_document_path>/Users/alexanderfedin/Projects/hapyy/proposals/generic/HUPYY-TECH.md</base_document_path>
+      <base_document_path>~/Projects/hapyy/proposals/generic/HUPYY-TECH.md</base_document_path>
       <components>
         <component>Hupyy KB (Workplace AI Platform)</component>
         <component>Formal Verification Engine (SMT-LIB/cvc5)</component>

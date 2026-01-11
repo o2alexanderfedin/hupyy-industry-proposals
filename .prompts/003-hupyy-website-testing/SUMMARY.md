@@ -107,7 +107,7 @@ All critical paths tested and working:
 ### Deployment Steps:
 1. **Push to GitHub**:
    ```bash
-   cd /Users/alexanderfedin/Projects/hapyy/proposals/generic
+   cd ~/Projects/hapyy/proposals/generic
    git add docs/ .prompts/
    git commit -m "Add Hupyy industry proposals website"
    git push origin main

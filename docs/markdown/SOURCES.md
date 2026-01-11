@@ -128,6 +128,6 @@
 
 ---
 
-**Report Location**: /Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/energy-utilities-proposal.md
+**Report Location**: ~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/energy-utilities-proposal.md
 
 **Report Status**: Complete and Verified

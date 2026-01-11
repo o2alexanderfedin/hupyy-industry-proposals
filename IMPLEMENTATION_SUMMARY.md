@@ -264,7 +264,7 @@ Additional:
 ## File Structure
 
 ```
-/Users/alexanderfedin/Projects/hapyy/proposals/generic/
+~/Projects/hapyy/proposals/generic/
 ├── docs/
 │   ├── index.html                    [MODIFIED] Added header with GitHub link
 │   └── assets/

@@ -250,13 +250,13 @@ A: No competitor offers formal verification of security protocols. Unique positi
 
 ## Resource Links
 
-**Main Report:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/enterprise-security-proposal.md`
+**Main Report:** `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/enterprise-security-proposal.md`
 
-**Sources:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/SOURCES.md`
+**Sources:** `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/SOURCES.md`
 
-**Documentation:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/README.md`
+**Documentation:** `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/README.md`
 
-**Technology Basis:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/HUPYY-TECH.md`
+**Technology Basis:** `~/Projects/hapyy/proposals/generic/HUPYY-TECH.md`
 
 ---
 

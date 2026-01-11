@@ -32,7 +32,7 @@
 
 ```bash
 # Navigate to docs directory
-cd /Users/alexanderfedin/Projects/hapyy/proposals/generic/docs
+cd ~/Projects/hapyy/proposals/generic/docs
 
 # Start local server
 python3 -m http.server 8000

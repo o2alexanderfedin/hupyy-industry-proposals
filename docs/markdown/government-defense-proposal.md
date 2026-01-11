@@ -1681,4 +1681,4 @@ I have created a comprehensive 4,847-word industry research report for the Gover
 
 The report is based on **15 real 2024-2025 sources** from web research including FedRAMP, CMMC, DoD procurement, formal verification, intelligence agencies, and market analysis.
 
-**File Location**: `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/government-defense-proposal.md`
+**File Location**: `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/government-defense-proposal.md`

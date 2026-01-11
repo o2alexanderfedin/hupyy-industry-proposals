@@ -1150,7 +1150,7 @@ std::vector<int> get_safe_value(const std::vector<int>& arr, size_t idx) {
 
   <distribution>
     <format>Markdown</format>
-    <location>/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/ai-ml-operations-proposal.md</location>
+    <location>~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/ai-ml-operations-proposal.md</location>
     <confidentiality>Internal</confidentiality>
   </distribution>
 </metadata>

@@ -11,7 +11,7 @@ Comprehensively test the Hupyy industry proposals website using WebFetch and Pla
 - GitHub Pages deployment validation
 
 ## Context
-Website location: @/Users/alexanderfedin/Projects/hapyy/proposals/generic/docs/
+Website location: @~/Projects/hapyy/proposals/generic/docs/
 Research reports: @.prompts/001-hupyy-industry-research/reports/*.md
 This prompt depends on completion of `002-hupyy-website-generation`.
 
@@ -93,7 +93,7 @@ Use htmlhint or validator.nu API to check HTML5 compliance
 **Test 2.1: Index Page Loading**
 ```
 WebFetch(
-  url: "file:///Users/alexanderfedin/Projects/hapyy/proposals/generic/docs/index.html",
+  url: "file://~/Projects/hapyy/proposals/generic/docs/index.html",
   prompt: "Verify the page loads correctly. Check for:
            1. Hupyy title and hero section visible
            2. All 10 industry cards present

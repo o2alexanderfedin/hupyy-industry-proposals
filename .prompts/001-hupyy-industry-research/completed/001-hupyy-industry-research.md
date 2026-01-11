@@ -4,7 +4,7 @@
 Create 10 comprehensive research reports analyzing how Hupyy technologies (KB, Formal Verification, Autonomous SE) can address specific industry needs. Each report should be detailed, actionable, and demonstrate deep understanding of both the technology and industry pain points.
 
 ## Context
-Base technology overview: @/Users/alexanderfedin/Projects/hapyy/proposals/generic/HUPYY-TECH.md
+Base technology overview: @~/Projects/hapyy/proposals/generic/HUPYY-TECH.md
 
 This prompt will spawn 10 parallel sub-tasks (one per industry) to maximize efficiency using map-reduce approach.
 
@@ -265,7 +265,7 @@ Use this exact markdown structure:
 Use Task tool 10 times in a single message, each with:
 - subagent_type: "general-purpose"
 - description: "Research {industry} for Hupyy"
-- prompt: "Create comprehensive industry research report for {industry}. Base technology: @/Users/alexanderfedin/Projects/hapyy/proposals/generic/HUPYY-TECH.md. Output to: .prompts/001-hupyy-industry-research/reports/{industry-slug}-proposal.md. Follow structure in parent prompt. Use WebSearch extensively for market data, competitors, regulations. Minimum 10 authoritative sources. Include all required sections with depth and specificity."
+- prompt: "Create comprehensive industry research report for {industry}. Base technology: @~/Projects/hapyy/proposals/generic/HUPYY-TECH.md. Output to: .prompts/001-hupyy-industry-research/reports/{industry-slug}-proposal.md. Follow structure in parent prompt. Use WebSearch extensively for market data, competitors, regulations. Minimum 10 authoritative sources. Include all required sections with depth and specificity."
 ```
 
 **Step 3**: As each task completes, update todo status

@@ -3,7 +3,7 @@
 
 **Generation Date:** December 10, 2025
 **Status:** Complete
-**Location:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/`
+**Location:** `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/`
 
 ---
 
@@ -425,6 +425,6 @@ To leverage this research for business decisions:
 
 ---
 
-**Report Location:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/enterprise-security-proposal.md`
+**Report Location:** `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/enterprise-security-proposal.md`
 
-**Sources Location:** `/Users/alexanderfedin/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/SOURCES.md`
+**Sources Location:** `~/Projects/hapyy/proposals/generic/.prompts/001-hupyy-industry-research/reports/SOURCES.md`
